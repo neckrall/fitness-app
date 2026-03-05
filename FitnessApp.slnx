@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="FitnessApp.BL/FitnessApp.BL.csproj" />
+  <Project Path="FitnessApp.CMD/FitnessApp.CMD.csproj" />
+  <Project Path="FitnessApp.Tests/FitnessApp.Tests.csproj" />
+</Solution>
