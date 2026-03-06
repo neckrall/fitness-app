@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="FitnessApp.BL/FitnessApp.BL.csproj" />
-  <Project Path="FitnessApp.CMD/FitnessApp.CMD.csproj" />
-  <Project Path="FitnessApp.Tests/FitnessApp.Tests.csproj" />
+  <Project Path="FitnessApp.BL/FitnessApp.BL.csproj" Id="d58b4b1b-26af-4f97-90fb-dbefb8ab15c6" />
+  <Project Path="FitnessApp.CMD/FitnessApp.CMD.csproj" Id="4ce86c2e-bf62-4417-8e11-22df5e638bcf" />
+  <Project Path="FitnessApp.Tests/FitnessApp.Tests.csproj" Id="07f7a0d0-9933-4aba-b651-638846f474c1" />
 </Solution>
