@@ -43,7 +43,7 @@ namespace FitnessApp.BL.Controllers
         public void Register(string genderName, DateTime birthDate, double weight, double height) 
         { 
             var genders = Load<Gender>() ?? new List<Gender>();
-            var gender = genders.SingleOrDefault(g => g.Name == genderName);
+            var gender = genders.FirstOrDefault(g => g.Name == genderName);
 
             if (gender is null) 
             {
