@@ -18,8 +18,7 @@ namespace FitnessApp.BL.Services
         {
             using (var db = new FitnessAppDbContext())
             {
-                var result = db.Set<T>().Where(t => true).ToList();
-                return result;
+                return db.Set<T>().Where(t => true).ToList();
             }
         }
     }

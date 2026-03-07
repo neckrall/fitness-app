@@ -1,6 +1,7 @@
-﻿using System;
-using System.Text;
+﻿using FitnessApp.BL.Controllers;
+using System;
 using System.Globalization;
+using System.Text;
 
 namespace FitnessApp.CMD.Services
 {
@@ -8,6 +9,8 @@ namespace FitnessApp.CMD.Services
     {
         public static string Ask(string question, int minLength, int maxLength)
         {
+            Console.Clear();
+
             var buffer = new StringBuilder();
             int left = Console.CursorLeft;
             int top = Console.CursorTop;
@@ -62,6 +65,8 @@ namespace FitnessApp.CMD.Services
 
         public static double AskDouble(string question, double min, double max)
         {
+            Console.Clear();
+
             var buffer = new StringBuilder();
             var top = Console.CursorTop;
 
@@ -123,6 +128,8 @@ namespace FitnessApp.CMD.Services
 
         public static DateTime AskDate(string question, DateTime minDate, DateTime maxDate)
         {
+            Console.Clear();
+
             var buffer = new StringBuilder();
             var top = Console.CursorTop;
             var prefix = $"{question} ({Language.Text("DateFormat")}): ";
@@ -181,6 +188,22 @@ namespace FitnessApp.CMD.Services
                 else if (!char.IsControl(key.KeyChar))
                     buffer.Append(key.KeyChar);
             }
+        }
+
+        public static void ShowControl(string keyTitle, string commandTitle) 
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(keyTitle);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($" - {commandTitle}");
+        }
+
+        public static void ShowParam(string paramName, string value) 
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write($"{paramName}: ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(value);
         }
     }
 }

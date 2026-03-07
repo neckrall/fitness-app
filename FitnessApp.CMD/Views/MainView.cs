@@ -20,15 +20,8 @@ namespace FitnessApp.CMD.Views
             Console.WriteLine($"{Language.Text("Hello")}, {_userController.User.Name}!\n");
             Console.WriteLine(Language.Text("Menu"));
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write("P");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine($" - {Language.Text("Profile")}");
-
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write("Q");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine($" - {Language.Text("Exit")}");
+            Message.ShowControl("P", Language.Text("Profile"));
+            Message.ShowControl("Q", Language.Text("Exit"));
 
             var input = Console.ReadKey();
 

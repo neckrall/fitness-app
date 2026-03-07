@@ -10,9 +10,10 @@ namespace FitnessApp.CMD
         static void Main(string[] args)
         {
             Console.Title = "Fitness App";
-            Console.Write("1. Русский\n2. English\n-> ");
-            var key = Console.ReadKey().Key;
-            Language.CurrentCulture = key == ConsoleKey.D2 ? new CultureInfo("en-US") : new CultureInfo("ru-RU");
+            Message.ShowControl("1", "Русский");
+            Message.ShowControl("2", "English");
+            Console.Write("-> ");
+            Language.CurrentCulture = Console.ReadKey().Key == ConsoleKey.D2 ? new CultureInfo("en-US") : new CultureInfo("ru-RU");
             new AuthorizationView();
         }
     }

@@ -19,28 +19,28 @@ namespace FitnessApp.CMD.Views
             Console.Title = Language.Text("Profile");
             Console.WriteLine($"{_userController.User.Name}, {_userController.User.Age}\n");
 
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"{Language.Text("Gender")}: ");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(_userController.User.Gender.Name);
+            Message.ShowParam(Language.Text("Gender"), _userController.User.Gender.Name);
+            Message.ShowParam(Language.Text("BirthDate"), $"{_userController.User.BirthDate:dd.MM.yyyy}");
+            Message.ShowParam(Language.Text("Weight"), _userController.User.Weight.ToString());
+            Message.ShowParam(Language.Text("Height"), _userController.User.Height.ToString());
 
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"{Language.Text("BirthDate")}: ");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"{_userController.User.BirthDate:dd.MM.yyyy}");
+            Console.ResetColor();
 
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"{Language.Text("Weight")}: ");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(_userController.User.Weight);
+            Console.WriteLine("\n" + Language.Text("Menu"));
+            Message.ShowControl("E", Language.Text("Back"));
 
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"{Language.Text("Height")}: ");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(_userController.User.Height);
+            var input = Console.ReadKey();
 
-            Console.ReadKey();
-            new MainView(_userController);
+            switch (input.Key) 
+            {
+                case ConsoleKey.E:
+                    new MainView(_userController);
+                    break;
+
+                default:
+                    new UserView(_userController);
+                    break;
+            }
         }
     }
 }

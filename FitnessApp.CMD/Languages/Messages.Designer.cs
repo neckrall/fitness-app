@@ -70,6 +70,15 @@ namespace FitnessApp.CMD.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Назад.
+        /// </summary>
+        internal static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Дата рождения.
         /// </summary>
         internal static string BirthDate {
